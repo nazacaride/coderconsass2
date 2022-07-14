@@ -1,0 +1,43 @@
+@import "reset";
+@import "body";
+@import "nav";
+@import "main";
+@import "paddingTB";
+@import "footer";
+
+
+
+$btn:(
+    padding:10px 15px,
+    
+    radio: 40px,
+);
+
+$colores:(
+    primario:rgb(245, 0, 0),
+    secundario:rgb(63, 0, 251),
+    terciario:rgb(0, 255, 68),
+);
+
+.btn{
+    padding:map-get($btn, padding );
+    background-color: map-get($colores, primario );
+    border-radius:map-get($btn , radio );
+}
+
+
+@mixin boton2($paddin) {
+    padding: $paddin;
+}
+
+.btn2{
+    @include boton2(20px)
+}
+
+.btn3{
+    @extend.btn2;
+    border-radius:map-get($btn , radio ) ;
+}
+
+
+
